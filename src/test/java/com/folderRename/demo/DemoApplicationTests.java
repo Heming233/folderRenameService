@@ -1,4 +1,4 @@
-package com.folderrenameservice.demo;
+package com.folderRename.demo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
