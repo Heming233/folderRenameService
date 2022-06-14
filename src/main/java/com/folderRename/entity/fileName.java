@@ -14,4 +14,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class fileName {
     private String name;
+    private String path;
 }
