@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class fileName {
+public class fileEntity {
     private String name;
     private String path;
 }
