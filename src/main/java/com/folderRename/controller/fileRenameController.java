@@ -30,14 +30,28 @@ public class fileRenameController {
      * 接收新文件名列表和旧文件列表
      * @return
      */
-    @PostMapping("/rename")
-    public ResponseData fileRename(@RequestBody List<File> fileList , @RequestBody List<String> nameList){
+    @PostMapping("/rename")//RequestBody最多只能有一个
+    public ResponseData fileRename(@RequestParam List<String> pathList , @RequestParam List<String> nameList){
         try{
-            String returnMsg = fileRenameService.renameOperation(fileList,nameList);
+            String returnMsg = fileRenameService.renameOperation(pathList,nameList);
             if(returnMsg.equals("200")){
                 return new ResponseData(){{
                     setCode(200);
                     setMsg("success");
+                }};
+            }
+            else if(returnMsg.equals("550")){
+                return new ResponseData(){{
+                    setCode(550);
+                    setMsg("fail");
+                    setError("文件不存在");
+                }};
+            }
+            else if(returnMsg.equals("500")){
+                return new ResponseData(){{
+                    setCode(500);
+                    setMsg("fail");
+                    setError("服务器错误");
                 }};
             }
             else{

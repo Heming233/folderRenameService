@@ -13,5 +13,5 @@ public interface fileRenameService {
     /**
      * 重命名操作接口
      */
-    String renameOperation(List<File> fileList , List<String> nameList);
+    String renameOperation(List<String> pathList , List<String> nameList);
 }
